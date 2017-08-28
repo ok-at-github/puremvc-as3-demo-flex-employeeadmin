@@ -1,14 +1,14 @@
 ## [PureMVC](http://puremvc.github.com/) [ActionScript 3](https://github.com/PureMVC/puremvc-as3-standard-framework/wiki) Demo: Employee Admin (FlexJS)
 This demo illustrates techniques for performing routine client-side maintenance operations in a PureMVC-based Flex application.
 
-* [Live Demo](http://darkstar.puremvc.org/content_header.html?url=http://puremvc.org/pages/demos/AS3/Demo_AS3_Flex_EmployeeAdmin/&desc=PureMVC%20API%20Demo:%20Employee%20Admin)
+* [Live Demo]()
 * [Discussion](http://forums.puremvc.org/index.php?topic=175.0)
 
 ## Screenshot
-![PureMVC AS3 Demo: Employee Admin](http://puremvc.org/pages/images/screenshots/PureMVC-Shot-AS3-Flex-EmployeeAdmin.png)
+![PureMVC AS3 FlexJS Demo: Employee Admin]()
 
 ## Status
-Work in progress
+Work in progress  
 Production - [Version 1.3](https://github.com/PureMVC/puremvc-as3-demo-flex-employeeadmin/blob/master/VERSION)
 
 ## Platforms / Technologies
