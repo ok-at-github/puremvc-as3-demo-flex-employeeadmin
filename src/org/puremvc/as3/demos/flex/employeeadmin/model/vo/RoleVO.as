@@ -5,8 +5,8 @@
  */
 package org.puremvc.as3.demos.flex.employeeadmin.model.vo
 {
-	import mx.collections.ArrayCollection;
-	
+	import org.apache.flex.collections.ArrayList;
+
 	[Bindable]
 	public class RoleVO
 	{
@@ -14,10 +14,10 @@ package org.puremvc.as3.demos.flex.employeeadmin.model.vo
 								 roles:Array=null )
 		{
 			if( username != null ) this.username = username;
-			if( roles != null ) this.roles = new ArrayCollection( roles );
+			if( roles != null ) this.roles = new ArrayList( roles );
 		} 
 		public var username:String = "";
-		public var roles:ArrayCollection = new ArrayCollection();
+		public var roles:ArrayList = new ArrayList();
 		
 	}
 }

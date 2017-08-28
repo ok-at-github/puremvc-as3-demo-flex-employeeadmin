@@ -1,20 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
- PureMVC AS3 Demo - Flex Employee Admin 
- Copyright (c) 2007-10 Clifford Hall <clifford.hall@puremvc.org>
- Your reuse is governed by the Creative Commons Attribution 3.0 License
--->
-<mx:Panel title="User Profile" status="{user.username}"
-	xmlns:mx="http://www.adobe.com/2006/mxml">
-	
-	<!-- Events dispatched by this View Component -->
-	<mx:Metadata>
-		[Event("add")]
-		[Event("update")]
-		[Event("cancel")]
-	</mx:Metadata>
-	
-	<mx:Script>
+<js:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+	xmlns:js="library://ns.apache.org/flexjs/express">
+
+	<fx:Script>
 		<![CDATA[
 			import org.puremvc.as3.demos.flex.employeeadmin.model.vo.UserVO;
 			import org.puremvc.as3.demos.flex.employeeadmin.model.enum.DeptEnum;
@@ -32,6 +20,7 @@
 			// submit the add or update
 			private function submit( ):void
 			{
+				/* ToDo
 				user = new UserVO( username.text, 
 					  			   first.text, 
 								   last.text, 
@@ -39,6 +28,7 @@
 								   password.text,
 								   DeptEnum( department.selectedItem )
 								 );
+								 */
 				
 				if ( user.isValid ) {
 					if ( mode == MODE_ADD ) {
@@ -50,16 +40,18 @@
 				
 			}
 			
+			
 			public function setUser( user:UserVO, mode:String ):void
 			{
 				this.user = user;
 				this.mode = mode;
-				first.setFocus();
+				// ToDo first.setFocus();
 			}
 			
 			public function reset():void
 			{
 				user = null;
+				/* ToDo
 				username.text = "";
 				first.text = "";
 				last.text = "";
@@ -67,6 +59,7 @@
 				password.text = ""; 
 				confirm.text = ""; 
 				department.selectedItem = DeptEnum.NONE_SELECTED;
+				*/
 			}
 			
 			// cancel the add or update
@@ -80,68 +73,8 @@
 			{
 				return ( u != "" && p != '' && p == c && d != DeptEnum.NONE_SELECTED );
 			}
-
 		]]>
-	</mx:Script>
-	
-	<!-- User Profile Form -->
-	<mx:Form xmlns:mx="http://www.adobe.com/2006/mxml"  enabled="{user != null}">
-		
-		<!-- First Name-->
-		<mx:FormItem label="First Name">
-			<mx:TextInput id="first" text="{user.fname}" />
-		</mx:FormItem>
-		
-		<!-- Last Name -->
-		<mx:FormItem label="Last Name">
-			<mx:TextInput id="last" text="{user.lname}"/>
-		</mx:FormItem>
-		
-		<!-- Email -->
-		<mx:FormItem label="Email">
-			<mx:TextInput id="email" text="{user.email}" />
-		</mx:FormItem>
-		
-		<!-- Username -->
-		<mx:FormItem label="Username" required="true">
-			<mx:TextInput id="username" enabled="{mode == MODE_ADD}" 
-				text="{user.username}" />
-		</mx:FormItem>
-		
-		<!-- Password -->
-		<mx:FormItem label="Password" required="true">
-			<mx:TextInput id="password" text="{user.password}" 
-				displayAsPassword="true"  />
-		</mx:FormItem>
-		
-		<!-- Confirm Password -->
-		<mx:FormItem label="Confirm Password" required="true">
-			<mx:TextInput id="confirm" text="{user.password}"  
-				displayAsPassword="true"/>
-		</mx:FormItem>
+	</fx:Script>
 
-		<!-- Department Combo -->
-		<mx:FormItem label="Department" required="true">
-			<mx:ComboBox id="department" labelField="value" 
-				selectedIndex="{user.department.ordinal+1}"
-				dataProvider="{ DeptEnum.comboList }"
-				enabled="{user != null}" />
-		</mx:FormItem>
 
-	</mx:Form>
-
-	<!-- User Profile Controls -->
-	<mx:ControlBar horizontalAlign="right">
-		
-		<!-- Update/Add User Button -->
-		<mx:Button id="submitButton" click="submit()" 
-				   label="{ ( mode == MODE_ADD )?'Add User':'Update Profile' }" 
-				   enabled="{ enableSubmit( username.text, confirm.text, password.text, department.selectedItem as DeptEnum ) }"/>
-		
-		<!-- Cancel Button -->
-		<mx:Button label="Cancel" click="cancel()" 
-				   enabled="{user != null}"/>
-				   
-	</mx:ControlBar>  
-	
-</mx:Panel>
+</js:Group>

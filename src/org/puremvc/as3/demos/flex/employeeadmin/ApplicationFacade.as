@@ -25,6 +25,8 @@ package org.puremvc.as3.demos.flex.employeeadmin
 
 		public static const ADD_ROLE:String 		= "addRole";
 		public static const ADD_ROLE_RESULT:String 	= "addRoleResult";
+
+		public static const ROLE_ALREADY_EXISTS:String 	= "roleAlreadyExists";
 		
 		
 		/**

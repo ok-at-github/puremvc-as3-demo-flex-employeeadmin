@@ -5,7 +5,6 @@
  */
 package org.puremvc.as3.demos.flex.employeeadmin.view
 {
-	import flash.events.Event;
 
 	import org.puremvc.as3.demos.flex.employeeadmin.ApplicationFacade;
 	import org.puremvc.as3.demos.flex.employeeadmin.model.UserProxy;
@@ -14,6 +13,7 @@ package org.puremvc.as3.demos.flex.employeeadmin.view
 
 	import org.puremvc.as3.interfaces.INotification;
 	import org.puremvc.as3.patterns.mediator.Mediator;
+	import org.apache.flex.events.Event;
 
 	public class UserFormMediator extends Mediator
 	{

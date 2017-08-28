@@ -4,11 +4,10 @@
  Your reuse is governed by the Creative Commons Attribution 3.0 License
  */
 package org.puremvc.as3.demos.flex.employeeadmin.controller
-{
-	import mx.controls.Alert;
-	
+{	
 	import org.puremvc.as3.interfaces.INotification;
 	import org.puremvc.as3.patterns.command.SimpleCommand;
+	import org.puremvc.as3.demos.flex.employeeadmin.ApplicationFacade;
 
 	public class AddRoleResultCommand extends SimpleCommand
 	{
@@ -16,7 +15,8 @@ package org.puremvc.as3.demos.flex.employeeadmin.controller
 		{
 			var result:Boolean = Boolean( notification.getBody() );
 			if ( result == false ) {
-				Alert.show ( "Role already exists for this user!","Add User Role" );
+				sendNotification(ApplicationFacade.ROLE_ALREADY_EXISTS);
+				//Alert.show ( "Role already exists for this user!","Add User Role" );
 			}
 		}
 		

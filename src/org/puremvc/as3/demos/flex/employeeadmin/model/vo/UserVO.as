@@ -5,7 +5,6 @@
  */
 package org.puremvc.as3.demos.flex.employeeadmin.model.vo
 {
-	import mx.collections.ArrayCollection;
 	import org.puremvc.as3.demos.flex.employeeadmin.model.enum.DeptEnum;
 	
 	[Bindable]

@@ -5,12 +5,12 @@
  */
 package org.puremvc.as3.demos.flex.employeeadmin.model
 {
-	import mx.collections.ArrayCollection;
 	
 	import org.puremvc.as3.demos.flex.employeeadmin.ApplicationFacade;
 	import org.puremvc.as3.demos.flex.employeeadmin.model.enum.RoleEnum;
 	import org.puremvc.as3.demos.flex.employeeadmin.model.vo.UserVO;
 	import org.puremvc.as3.patterns.proxy.Proxy;
+	import org.apache.flex.collections.ArrayList;
 
 	public class RoleProxy extends Proxy
 	{
@@ -18,13 +18,13 @@ package org.puremvc.as3.demos.flex.employeeadmin.model
 
 		public function RoleProxy( )
 		{
-			super( NAME, new ArrayCollection );
+			super( NAME, new ArrayList );
 		}
 		
 		// get the data property cast to the appropriate type
-		public function get roles():ArrayCollection
+		public function get roles():ArrayList
 		{
-			return data as ArrayCollection;
+			return data as ArrayList;
 		}
 
 		// add an item to the data
@@ -50,7 +50,7 @@ package org.puremvc.as3.demos.flex.employeeadmin.model
 			var hasRole:Boolean = false;
 			for ( var i:int=0; i<roles.length; i++) { 
 				if ( roles.getItemAt(i).username == user.username ) {
-					var userRoles:ArrayCollection = roles.getItemAt(i).roles as ArrayCollection;
+					var userRoles:ArrayList = roles.getItemAt(i).roles as ArrayList;
 					for ( var j:int=0; j<userRoles.length; j++ ) {
 						if ( RoleEnum( userRoles.getItemAt(j) ).equals( role ) ) {
 							hasRole = true;
@@ -70,7 +70,7 @@ package org.puremvc.as3.demos.flex.employeeadmin.model
 			if ( ! doesUserHaveRole( user, role ) ) {
 				for ( var i:int=0; i<roles.length; i++) { 
 					if ( roles.getItemAt(i).username == user.username ) {
-						var userRoles:ArrayCollection = roles.getItemAt(i).roles as ArrayCollection;
+						var userRoles:ArrayList = roles.getItemAt(i).roles as ArrayList;
 						userRoles.addItem( role );
 						result = true;
 						break;
@@ -86,7 +86,7 @@ package org.puremvc.as3.demos.flex.employeeadmin.model
 			if ( doesUserHaveRole( user, role ) ) {
 				for ( var i:int=0; i<roles.length; i++) { 
 					if ( roles.getItemAt(i).username == user.username ) {
-						var userRoles:ArrayCollection = roles.getItemAt(i).roles as ArrayCollection;
+						var userRoles:ArrayList = roles.getItemAt(i).roles as ArrayList;
 						for ( var j:int=0; j<userRoles.length; j++) { 
 							if ( RoleEnum( userRoles.getItemAt(j) ).equals( role ) ) {
 								userRoles.removeItemAt(j);
@@ -100,12 +100,12 @@ package org.puremvc.as3.demos.flex.employeeadmin.model
 		}
 
 		// get a users roles
-		public function getUserRoles( username:String ):ArrayCollection
+		public function getUserRoles( username:String ):ArrayList
 		{
-			var userRoles:ArrayCollection = new ArrayCollection();
+			var userRoles:ArrayList = new ArrayList();
 			for ( var i:int=0; i<roles.length; i++) { 
 				if ( roles.getItemAt(i).username == username ) {
-					userRoles = roles.getItemAt(i).roles as ArrayCollection;
+					userRoles = roles.getItemAt(i).roles as ArrayList;
 					break;
 				}
 			}	

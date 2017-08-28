@@ -5,7 +5,6 @@
  */
 package org.puremvc.as3.demos.flex.employeeadmin.view
 {
-	import flash.events.Event;
 
 	import org.puremvc.as3.demos.flex.employeeadmin.ApplicationFacade;
 	import org.puremvc.as3.demos.flex.employeeadmin.model.RoleProxy;

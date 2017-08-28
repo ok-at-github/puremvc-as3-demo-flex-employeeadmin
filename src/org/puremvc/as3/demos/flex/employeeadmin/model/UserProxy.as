@@ -5,11 +5,10 @@
  */
 package org.puremvc.as3.demos.flex.employeeadmin.model
 {
-	import mx.collections.ArrayCollection;
-	
 	import org.puremvc.as3.demos.flex.employeeadmin.model.enum.DeptEnum;
 	import org.puremvc.as3.demos.flex.employeeadmin.model.vo.UserVO;
 	import org.puremvc.as3.patterns.proxy.Proxy;
+	import org.apache.flex.collections.ArrayList;
 
 	public class UserProxy extends Proxy
 	{
@@ -17,13 +16,13 @@ package org.puremvc.as3.demos.flex.employeeadmin.model
 
 		public function UserProxy( )
 		{
-			super( NAME, new ArrayCollection );
+			super( NAME, new ArrayList );
 		}
 
 		// return data property cast to proper type
-		public function get users():ArrayCollection
+		public function get users():ArrayList
 		{
-			return data as ArrayCollection;
+			return data as ArrayList;
 		}
 
 		// add an item to the data	
