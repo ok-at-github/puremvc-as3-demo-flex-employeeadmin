@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <js:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
-	xmlns:js="library://ns.apache.org/flexjs/express">
+	xmlns:js="library://ns.apache.org/flexjs/express" xmlns:mdl="library://ns.apache.org/flexjs/mdl">
 
 
 	<fx:Script>
@@ -14,10 +14,12 @@
 			
 			[Bindable] public var selectedUser:UserVO;
 			[Bindable] public var users:ArrayList;
-			[Bindable] private var armed:Boolean = false; // delete confirmation
+			// ToDo: 'private' throws an compiler error!
+			[Bindable] public var armed:Boolean = false; // delete confirmation
 			
 			// send the named event and reset armed state 
-			private function sendEvent( eventName:String ):void
+			// ToDo: 'private' throws an compiler error!
+			public function sendEvent( eventName:String ):void
 			{
 				armed=false;
 				dispatchEvent( new Event( eventName, true ) );
@@ -40,6 +42,12 @@
 			**/
 		]]>
 	</fx:Script>
+
+	<mdl:Card width="800">
+		<mdl:CardTitle>
+            <mdl:CardTitleText text="UserList"/>
+    	</mdl:CardTitle>
+	</mdl:Card>
 
 
 </js:Group>

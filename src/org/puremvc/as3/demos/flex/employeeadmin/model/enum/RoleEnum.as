@@ -60,9 +60,9 @@ package org.puremvc.as3.demos.flex.employeeadmin.model.enum
 			return cList;
 		}
 		
-		public function equals( enum:RoleEnum ):Boolean
+		public function equals( enumerable:RoleEnum ):Boolean
 		{
-			return ( this.ordinal == enum.ordinal && this.value == enum.value );
+			return ( this.ordinal == enumerable.ordinal && this.value == enumerable.value );
 		}
 	}
 }
